@@ -22,12 +22,13 @@ const showSchema = new Schema(
       type: String
     },
     rating: {
-      enum: ['1','2','3','4','5']
+      type: Number,
+      enum: [1,2,3,4,5]
     },
     director: {
       type: String
     },
-    performers: { type: Schema.Types.ObjectId, ref: 'Performer'},
+    performers: [{ type: Schema.Types.ObjectId, ref: 'Performer'}],
     comments: [commentSchema]
   },
   { timestamps: true }

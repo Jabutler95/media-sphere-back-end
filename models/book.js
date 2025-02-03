@@ -22,7 +22,8 @@ const bookSchema = new Schema(
       type: String
     },
     rating: {
-      enum: ['1','2','3','4','5']
+      type: Number,
+      enum: [1,2,3,4,5]
     },
     author: {
       type: String

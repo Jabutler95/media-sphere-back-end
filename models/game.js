@@ -13,7 +13,7 @@ const commentSchema = new Schema(
   { timestamps: true }
 )
 
-const movieSchema = new Schema(
+const gameSchema = new Schema(
   {
     title: {
       type: String
@@ -25,15 +25,18 @@ const movieSchema = new Schema(
       type: Number,
       enum: [1,2,3,4,5]
     },
-    director: {
+    studio: {
       type: String
     },
-    performers: [{ type: Schema.Types.ObjectId, ref: 'Performer'}],
+    category: {
+      type: String,
+      enum: ['Video Game', 'Board Game', 'Card Game', 'Other']
+    },
     comments: [commentSchema]
   },
   { timestamps: true }
 )
 
-const Movie = mongoose.model('Movie', movieSchema)
+const Game = mongoose.model('Game', gameSchema)
 
-export { Movie }
+export { Game }
